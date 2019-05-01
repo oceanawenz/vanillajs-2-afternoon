@@ -24,7 +24,7 @@ Let's begin by setting up a couple of environment variables. These will be varia
       ```js
       function getRandomNumber(min, max) {
         return Math.round(Math.random() * (max - min + 1)) + min;
-      };
+      }
       ```
     - This function will take in a min and a max number, and return a random number between those two.
 
@@ -39,8 +39,8 @@ const mousePosition = { x: 0, y: 0 };
 let drawId;
 
 function getRandomNumber(min, max) {
-    return Math.round(Math.random() * (max - min + 1)) + min;
-};
+  return Math.round(Math.random() * (max - min + 1)) + min;
+}
 ```
 
 </details>
@@ -91,7 +91,7 @@ const getRandomNumber = function(min, max) {
   return Math.round(Math.random() * (max - min + 1)) + min;
 };
 
-window.addEventListener('mousemove', function(mouseMoveEvent) {
+window.addEventListener("mousemove", function(mouseMoveEvent) {
   mousePosition.x = mouseMoveEvent.pageX;
   mousePosition.y = mouseMoveEvent.pageY;
 });
@@ -154,16 +154,16 @@ In this step we'll take advantage of the built-in `setInterval` (more on that <a
 const mousePosition = { x: 0, y: 0 };
 let drawId;
 
-const getRandomNumber = function(min, max){
+const getRandomNumber = function(min, max) {
   return Math.round(Math.random() * (max - min + 1)) + min;
-}
+};
 
-window.addEventListener("mousemove", function(e){
+window.addEventListener("mousemove", function(e) {
   mousePosition.x = e.pageX;
   mousePosition.y = e.pageY;
 });
 
-function draw(){
+function draw() {
   return setInterval(function() {
     const container = document.getElementById("wrap");
     const color = `background:rgb(${getRandomNumber(0, 255)},${getRandomNumber(
@@ -230,14 +230,14 @@ const getRandomNumber = function(min, max) {
   return Math.round(Math.random() * (max - min + 1)) + min;
 };
 
-window.addEventListener('mousemove', function(e) {
+window.addEventListener("mousemove", function(e) {
   mousePosition.x = e.pageX;
   mousePosition.y = e.pageY;
 });
 
 function draw() {
   return setInterval(function() {
-    const container = document.getElementById('wrap');
+    const container = document.getElementById("wrap");
     const color = `background:rgb(${getRandomNumber(0, 255)},${getRandomNumber(
       0,
       255
@@ -254,21 +254,21 @@ function draw() {
     )}px;`;
     const style = `${left}${top}${color}${size}`;
 
-    const ball = document.createElement('div');
-    ball.classList.add('ball');
+    const ball = document.createElement("div");
+    ball.classList.add("ball");
     ball.style = style;
 
-    ball.addEventListener('animationend', function(e) {
+    ball.addEventListener("animationend", function(e) {
       e.target.remove();
     });
 
     container.appendChild(ball);
   }, 50);
 }
-window.addEventListener('mouseover', function() {
+window.addEventListener("mouseover", function() {
   drawId = draw();
 });
-window.addEventListener('mouseout', function() {
+window.addEventListener("mouseout", function() {
   clearInterval(drawId);
 });
 ```

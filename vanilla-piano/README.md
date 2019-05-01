@@ -34,6 +34,7 @@ Begin by examining the exisiting code. You'll notice that our piano is a Scalabl
 
 const element = document.querySelector('audio[data-key="65"]');
 ```
+
 </details>
 
 ## Step 2
@@ -89,9 +90,13 @@ In this step we'll get access to the visual key that was pressed (the unique pol
 
 ```js
 window.addEventListener("keypress", function(keyPressEvent) {
-  const tone = document.querySelector(`audio[data-key="${keyPressEvent.keyCode}"]`);
+  const tone = document.querySelector(
+    `audio[data-key="${keyPressEvent.keyCode}"]`
+  );
   if (!tone) return;
-  const pianoKey = document.querySelector(`.pianoKey[data-key="${keyPressEvent.keyCode}"]`);
+  const pianoKey = document.querySelector(
+    `.pianoKey[data-key="${keyPressEvent.keyCode}"]`
+  );
 });
 ```
 
@@ -120,9 +125,13 @@ In this step we'll get our piano to play a note when we press one of the valid k
 
 ```js
 window.addEventListener("keypress", function(keyPressEvent) {
-  const tone = document.querySelector(`audio[data-key="${keyPressEvent.keyCode}"]`);
+  const tone = document.querySelector(
+    `audio[data-key="${keyPressEvent.keyCode}"]`
+  );
   if (!tone) return;
-  const pianoKey = document.querySelector(`.pianoKey[data-key="${keyPressEvent.keyCode}"]`);
+  const pianoKey = document.querySelector(
+    `.pianoKey[data-key="${keyPressEvent.keyCode}"]`
+  );
   tone.currentTime = 0;
   tone.play();
 });
@@ -156,9 +165,13 @@ In this step we'll add an animation to make our keys work when their associated 
 
 ```js
 window.addEventListener("keypress", function(keyPressEvent) {
-  const tone = document.querySelector(`audio[data-key="${keyPressEvent.keyCode}"]`);
+  const tone = document.querySelector(
+    `audio[data-key="${keyPressEvent.keyCode}"]`
+  );
   if (!tone) return;
-  const pianoKey = document.querySelector(`.pianoKey[data-key="${keyPressEvent.keyCode}"]`);
+  const pianoKey = document.querySelector(
+    `.pianoKey[data-key="${keyPressEvent.keyCode}"]`
+  );
   tone.currentTime = 0;
   pianoKey.classList.add("pressed");
   tone.play();
